@@ -50,6 +50,7 @@ h2 {
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  font-family: var(--font-h2);
 }
 .header.scrolled {
   background-color: rgba(237, 235, 215, 0.95);
@@ -78,15 +79,17 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.9rem;
+  font-family: var(--font-h2);
 }
 .navbar-nav .nav-link:hover {
   color: var(--steel-blue) !important;
+  font-family: var(--font-h2);
 }
 
 /* Hero Section */
 .hero {
   position: relative;
-  height: 60vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,7 +103,7 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -2;
+  z-index: -1;
 }
 
 /* Hero video overlay */
@@ -111,21 +114,32 @@ h2 {
   width: 100%;
   height: 100%;
   background-color: var(--gold-overlay);
+  background: linear-gradient(
+    135deg,
+    var(--gold-overlay),
+    rgba(52, 127, 196, 0.2)
+  );
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
 }
 
 .hero-content {
   background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  font-family: sans-serif;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 3rem;
   border-radius: 20px;
   text-align: center;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   transform: translateY(100px);
   opacity: 0;
   animation: slideUp 1s ease forwards;
   animation-delay: 0.5s;
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 @keyframes slideUp {
@@ -136,14 +150,17 @@ h2 {
 }
 
 .hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
   color: var(--neutral-black);
+  font-family: var(--font-h1);
   font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hero-content p {
   font-size: 1.3rem;
+  font-family: sans-serif;
   margin-bottom: 2rem;
   color: var(--neutral-gray);
 }
@@ -151,14 +168,16 @@ h2 {
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
   margin-top: 2rem;
 }
 
 .social-icon {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   background: linear-gradient(45deg, var(--steel-blue), var(--robin-egg-blue));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -166,11 +185,12 @@ h2 {
   color: white;
   text-decoration: none;
   transition: all 0.3s ease;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .social-icon:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
+  background: linear-gradient(45deg, var(--robin-egg-blue), var(--steel-blue));
   box-shadow: 0 10px 20px rgba(52, 127, 196, 0.4);
   color: white;
 }
