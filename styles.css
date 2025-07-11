@@ -41,7 +41,7 @@ h2 {
 }
 /*Header*/
 .header {
-  background-color: var(--main-color);
+  background-color: white;
   padding: 1rem 0;
   position: fixed;
   top: 0;
@@ -86,7 +86,7 @@ h2 {
 /* Hero Section */
 .hero {
   position: relative;
-  height: 100vh;
+  height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
