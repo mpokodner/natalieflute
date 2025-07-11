@@ -42,7 +42,7 @@ h2 {
 }
 /*Header*/
 .header {
-  background-color: white;
+  background-color: var(--off-white);
   padding: 1rem 0;
   position: fixed;
   top: 0;
@@ -83,7 +83,8 @@ h2 {
   font-family: var(--font-h2);
 }
 .navbar-nav .nav-link:hover {
-  color: var(--steel-blue) !important;
+  color: var(--murrey) !important;
+  font-weight: bold;
   font-family: var(--font-h2);
 }
 
