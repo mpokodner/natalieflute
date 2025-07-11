@@ -86,15 +86,16 @@ h2 {
 /* Hero Section */
 .hero {
   background-image: url("natalieflutehero.png");
-  background-size: cover; /* changed from 100% 100% to avoid distortion */
+  background-size: cover; /* keeps proper aspect ratio */
   background-position: center center;
-  background-attachment: fixed;
+  background-attachment: scroll; /* change from fixed to scroll */
   background-repeat: no-repeat;
-  min-height: 100vh; /* full viewport height */
-  padding-top: 80px; /* space for fixed header */
+  min-height: 100vh;
+  padding-top: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative; /* add this */
 }
 
 .hero-content {
@@ -102,7 +103,7 @@ h2 {
   backdrop-filter: blur(20px);
   font-family: sans-serif;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 2rem; /* reduced for mobile */
+  padding: 2rem;
   border-radius: 20px;
   text-align: center;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -110,12 +111,23 @@ h2 {
   opacity: 0;
   animation: slideUp 1s ease forwards;
   animation-delay: 0.5s;
-  position: relative;
-  z-index: 2;
-  max-width: 90%; /* responsive width */
+  position: relative; /* change from relative to static or remove z-index issues */
+  z-index: 10; /* increase z-index to be above background */
+  max-width: 90%;
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .hero-content h1 {
